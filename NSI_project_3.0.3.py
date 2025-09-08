@@ -6,7 +6,8 @@ from sys import *
 import os
 from os import *
 import io
-
+import smtplib
+from email.mime.text import MIMEText
 
 
 # Génération de la clé de chiffrement
@@ -36,9 +37,46 @@ def generate_key():
     key1 = generate_small_key()
     key2 = generate_small_key()
     key_drop = key1 + key2
-    print(key_drop) 
+    print(key_drop)
 
 
+
+    # On demande si on veut envoyer par mail
+    send_mail = input("Voulez-vous envoyer la clé par email ? (oui/non) : ").lower()
+
+    if send_mail == "oui":
+        cible = input("Entrez l'adresse email du destinataire : ")
+
+        # --- CONFIGURATION ---
+        expediteur = "gs.dev.mra@gmail.com"
+        mdp = "xodu xxti alvq lhup"
+        serveur_smtp = "smtp.gmail.com"
+        port_smtp = 587
+        # ------------------------------------------------
+
+        # Création du message
+        message = MIMEText(f"Voici votre clé :\n {key_drop}")
+        message["Subject"] = "Votre clé secrète"
+        message["From"] = expediteur
+        message["To"] = cible
+
+        try:
+            with smtplib.SMTP(serveur_smtp, port_smtp) as server:
+                server.starttls()
+                server.login(expediteur, mdp)
+                server.sendmail(expediteur, cible, message.as_string())
+            print("Email envoyé avec succès !")
+        except Exception as e:
+            print("Erreur lors de l'envoi :", e)
+
+    else:
+        print("Envoi annulé.")
+
+
+
+
+
+    
 
 
 
@@ -121,6 +159,48 @@ def crypter():
 
 
 
+        # --- Envoi par email ---
+
+
+    envoyer_mail = input("\nVoulez-vous envoyer le résultat par email ? (oui/non) : ").lower()
+
+    if envoyer_mail == "oui":
+        destinataire = input("Entrez l'adresse email du destinataire : ")
+
+        expediteur = "gs.dev.mra@gmail.com"
+        mdp = "xodu xxti alvq lhup"  
+        serveur_smtp = "smtp.gmail.com"
+        port_smtp = 587
+
+        # Création du message
+        contenu = f"""
+        **Clé utilisée :
+        {recup_key}
+
+        **Texte original :
+        {text}
+
+        **Texte crypté :
+        {crypted_text_output}
+        """
+        message = MIMEText(contenu)
+        message["Subject"] = "Résultat du cryptage"
+        message["From"] = expediteur
+        message["To"] = destinataire
+
+        try:
+            with smtplib.SMTP(serveur_smtp, port_smtp) as server:
+                server.starttls()
+                server.login(expediteur, mdp)
+                server.sendmail(expediteur, destinataire, message.as_string())
+            print(" Email envoyé avec succès !")
+        except Exception as e:
+            print(" Erreur lors de l'envoi :", e)
+
+
+
+
+
 
 
 
@@ -194,6 +274,47 @@ def décrypter():
     print("TIME : ",time,"||Voici votre texte décrypté :\n\n")
 
     print(uncrypted_text_output)
+    
+
+
+
+        # --- Envoi par email ---
+
+
+    envoyer_mail = input("\nVoulez-vous envoyer le résultat par email ? (oui/non) : ").lower()
+
+    if envoyer_mail == "oui":
+        destinataire = input("Entrez l'adresse email du destinataire : ")
+
+        expediteur = "gs.dev.mra@gmail.com"
+        mdp = "xodu xxti alvq lhup"  #
+        serveur_smtp = "smtp.gmail.com"
+        port_smtp = 587
+
+        # Création du message
+        contenu = f"""
+        **Clé utilisée :
+        {recup_key}
+
+        **Texte crypté (fourni en entrée) :
+        {text}
+
+        **Texte décrypté :
+        {uncrypted_text_output}
+        """
+        message = MIMEText(contenu)
+        message["Subject"] = "Résultat du décryptage"
+        message["From"] = expediteur
+        message["To"] = destinataire
+
+        try:
+            with smtplib.SMTP(serveur_smtp, port_smtp) as server:
+                server.starttls()
+                server.login(expediteur, mdp)
+                server.sendmail(expediteur, destinataire, message.as_string())
+            print(" Email envoyé avec succès !")
+        except Exception as e:
+            print(" Erreur lors de l'envoi :", e)
 
     
 
@@ -281,3 +402,13 @@ menu()
         
 
   
+
+    
+    
+    
+    
+        
+        
+
+  
+
