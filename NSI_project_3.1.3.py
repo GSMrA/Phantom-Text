@@ -347,12 +347,12 @@ def menu():
         print("\t\t\t\t\t\t\t\t\t\t\t                MENU                ")
         print("\t\t\t\t\t\t\t\t\t\t\t====================================")
         print("")
-        print("\t\t\t\t\t\t\t\t\t\t\t[1] 🔑 Générer une clé")
-        print("\t\t\t\t\t\t\t\t\t\t\t[2] 🔒 Crypter un message")
-        print("\t\t\t\t\t\t\t\t\t\t\t[3] 🔓 Décrypter un message")
-        print("\t\t\t\t\t\t\t\t\t\t\t[0] ❌ Quitter")
+        print("\t\t\t\t\t\t\t\t\t\t\t[1]  Générer une clé")
+        print("\t\t\t\t\t\t\t\t\t\t\t[2]  Crypter un message")
+        print("\t\t\t\t\t\t\t\t\t\t\t[3]  Décrypter un message")
+        print("\t\t\t\t\t\t\t\t\t\t\t[0]  Quitter")
         print("")
-        choix = input("\t\t\t\t\t\t\t\t\t\t\t👉 Choisis une option : ")
+        choix = input("\t\t\t\t\t\t\t\t\t\t\t Choisis une option : ")
         print("\n\n")
 
         if choix == "1":
@@ -362,7 +362,7 @@ def menu():
         elif choix == "3":
             décrypter()
         elif choix == "0":
-            print("\n\t\t\t\t\t\t\t\t\t\t\tBye BYEEEEEE ! 👋")
+            print("\n\t\t\t\t\t\t\t\t\t\t\tBye BYEEEEEE !")
             break
         else:
             print("\n\t\t\t\t\t\t\t\t\t\t\t[!] Choix invalide")
@@ -411,6 +411,7 @@ menu()
         
 
   
+
 
 
 
