@@ -49,7 +49,7 @@ def generate_key():
 
         # --- CONFIGURATION ---
         expediteur = "gs.dev.mra@gmail.com"
-        mdp = "xodu xxti alvq lhup"
+        mdp = "**** **** **** ****"
         serveur_smtp = "smtp.gmail.com"
         port_smtp = 587
         # ------------------------------------------------
@@ -411,4 +411,5 @@ menu()
         
 
   
+
 
