@@ -49,7 +49,7 @@ def generate_key():
 # --- FONCTION D'ENVOI EMAIL ---
 def send_email(destinataire, subject, contenu):
     expediteur = "gs.dev.mra@gmail.com"
-    mdp = "xodu xxti alvq lhup"
+    mdp = "**** **** **** ****"
     serveur_smtp = "smtp.gmail.com"
     port_smtp = 587
 
@@ -158,3 +158,4 @@ entry_result = tk.Text(root, height=10)
 entry_result.pack()
 
 root.mainloop()
+
