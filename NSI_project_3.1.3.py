@@ -168,7 +168,7 @@ def crypter():
         destinataire = input("Entrez l'adresse email du destinataire : ")
 
         expediteur = "gs.dev.mra@gmail.com"
-        mdp = "xodu xxti alvq lhup"  
+        mdp = "**** **** **** ****"  
         serveur_smtp = "smtp.gmail.com"
         port_smtp = 587
 
@@ -287,7 +287,7 @@ def décrypter():
         destinataire = input("Entrez l'adresse email du destinataire : ")
 
         expediteur = "gs.dev.mra@gmail.com"
-        mdp = "xodu xxti alvq lhup"  #
+        mdp = "**** **** **** ****"  #
         serveur_smtp = "smtp.gmail.com"
         port_smtp = 587
 
@@ -411,5 +411,6 @@ menu()
         
 
   
+
 
 
