@@ -80,15 +80,16 @@ def generate_key():
 
 
 
-def recup_key(recup_key):
-    #recup_key = str(input("Entrez la clé de chiffrement : "))
-    key1_list = []
-    key2_list = []
-    for i in range (127):
-        key1_list.append(recup_key[i])
-    for i in range(254,254):
-        key2_list.append(recup_key[i])
-    return key1_list, key2_list
+#
+#def recup_key(recup_key):
+ #   #recup_key = str(input("Entrez la clé de chiffrement : "))
+ #   key1_list = []
+ #   key2_list = []
+ #   for i in range (127):
+ #       key1_list.append(recup_key[i])
+  #  for i in range(254,254):
+  #      key2_list.append(recup_key[i])
+  #  return key1_list, key2_list
 def crypter():
     time = str(int(round(monotonic(),0)))
     textmessage = "TIME : "+ time + "||Entrez le texte a crypter : \n"
@@ -408,6 +409,7 @@ menu()
         
 
   
+
 
 
 
