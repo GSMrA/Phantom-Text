@@ -80,7 +80,6 @@ def generate_key():
 
 
 
-#Récuperer la clé de chiffrement
 def recup_key(recup_key):
     #recup_key = str(input("Entrez la clé de chiffrement : "))
     key1_list = []
@@ -158,7 +157,7 @@ def crypter():
 
 
 
-        # --- Envoi par email ---
+
 
 
     envoyer_mail = input("\nVoulez-vous envoyer le résultat par email ? (oui/non) : ").lower()
@@ -171,7 +170,6 @@ def crypter():
         serveur_smtp = "smtp.gmail.com"
         port_smtp = 587
 
-        # Création du message
         contenu = f"""
         **Clé utilisée :
         {recup_key}
@@ -241,7 +239,7 @@ def décrypter():
         key2_list.append(recup_key[i])
     
 
-    #key 2 c lordre des caractères
+
     
 
     caractères = list(ressources_caractères)
@@ -277,7 +275,7 @@ def décrypter():
 
 
 
-        # --- Envoi par email ---
+
 
 
     envoyer_mail = input("\nVoulez-vous envoyer le résultat par email ? (oui/non) : ").lower()
@@ -290,7 +288,7 @@ def décrypter():
         serveur_smtp = "smtp.gmail.com"
         port_smtp = 587
 
-        # Création du message
+
         contenu = f"""
         **Clé utilisée :
         {recup_key}
@@ -410,6 +408,7 @@ menu()
         
 
   
+
 
 
 
