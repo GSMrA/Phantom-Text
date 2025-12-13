@@ -10,7 +10,7 @@ import smtplib
 from email.mime.text import MIMEText
 
 
-# Génération de la clé de chiffrement
+# Génér de la clé
 ressources_caractères = [
     "a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z",
     "à","â","ä","ç","é","è","ê","ë","î","ï","ô","ö","ù","û","ü","ÿ","œ","æ",
@@ -41,7 +41,6 @@ def generate_key():
 
 
 
-    # On demande si on veut envoyer par mail
     send_mail = input("Voulez-vous envoyer la clé par email ? (oui/non) : ").lower()
 
     if send_mail == "oui":
@@ -411,6 +410,7 @@ menu()
         
 
   
+
 
 
 
